@@ -12,6 +12,10 @@ describe Bowling do
     roll_many(2, 5)
   end
 
+  def roll_strike
+    @game.roll(10)
+  end
+
   before(:each) do
     @game = Bowling.new
   end
@@ -58,7 +62,7 @@ describe Bowling do
   describe "one strike" do
 
     it "calculates the score with one strike" do
-      @game.roll(10)
+      roll_strike
       @game.roll(3)
       @game.roll(4)
       roll_many(16, 0)
