@@ -19,11 +19,19 @@ describe Bowling do
       @game.roll(0)
     end
 
-    it "a gutter game should have a score of zero" do
-      10.times do
+    it "has a zero score after rolling all gutterballs" do
+      20.times do
         @game.roll(0)
       end
       expect(@game.score).to eql(0)
+      @game.score
+    end
+
+    it "has a score of 20 after rolling all ones" do
+      20.times do
+        @game.roll(1)
+      end
+      expect(@game.score).to eql(20)
       @game.score
     end
   end
